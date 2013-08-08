@@ -28,6 +28,8 @@ class DefaultObject
 
 class App extends DefaultObject
   @events
+    '#pingTheSite' : click : '_pingTheSite'
+    '#pingTheIframe' : click : '_pingTheIframe'
 
   @onDomReady [
     '_initEventListeners'
@@ -38,6 +40,12 @@ class App extends DefaultObject
       window.addEventListener('message', @_siteMessageHandler, false);
     if $('body').hasClass('iframe')
       window.addEventListener('message', @_iframeMessageHandler, false);
+
+  _pingTheSite: (e) ->
+    console.log 'ping the site'
+
+  _pingTheIframe: (e) ->
+    console.log 'ping the iframe'
   _siteMessageHandler: (e) ->
     console.log 'message received on the site'
   _iframeMessageHandler: (e) ->

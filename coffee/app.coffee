@@ -44,6 +44,11 @@ class App extends DefaultObject
   _pingTheSite: (e) ->
     console.log 'ping the site'
 
+    top.postMessage(
+      { message: 'ping from the iframe', 'source': 'button' },
+      'http://demo.tijs.dev' # replace with your url
+    );
+
   _pingTheIframe: (e) ->
     console.log 'ping the iframe'
   _siteMessageHandler: (e) ->

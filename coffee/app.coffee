@@ -53,6 +53,9 @@ class App extends DefaultObject
     console.log 'ping the iframe'
   _siteMessageHandler: (e) ->
     console.log 'message received on the site'
+    console.log 'message: ' + e.data.message
+
+    $('.site #receivedMessages').append(e.data.message + '<br />');
   _iframeMessageHandler: (e) ->
     console.log 'message received on the iframe'
 App.current = new App()

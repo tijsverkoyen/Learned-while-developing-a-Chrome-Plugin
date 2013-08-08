@@ -30,8 +30,18 @@ class App extends DefaultObject
   @events
 
   @onDomReady [
+    '_initEventListeners'
   ]
 
+  _initEventListeners: ->
+    if $('body').hasClass('site')
+      window.addEventListener('message', @_siteMessageHandler, false);
+    if $('body').hasClass('iframe')
+      window.addEventListener('message', @_iframeMessageHandler, false);
+  _siteMessageHandler: (e) ->
+    console.log 'message received on the site'
+  _iframeMessageHandler: (e) ->
+    console.log 'message received on the iframe'
 App.current = new App()
 
 $ ->

@@ -65,6 +65,16 @@ class App extends DefaultObject
 
   _iframeMessageHandler: (e) ->
     console.log 'message received on the iframe'
+    console.log 'message: ' + e.data.message
+
+    $('.iframe #receivedMessages').append(e.data.message + '<br />');
+
+    if e.data.source == 'button'
+      e.source.postMessage(
+        { message: 'pong from the iframe', source: 'answer' }
+        e.origin
+      );
+
 App.current = new App()
 
 $ ->

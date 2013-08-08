@@ -51,6 +51,12 @@ class App extends DefaultObject
 
   _pingTheIframe: (e) ->
     console.log 'ping the iframe'
+
+    $('#iframe')[0].contentWindow.postMessage(
+      { message: 'ping from the site', 'source': 'button' },
+      'http://demo.tijs.dev' # replace with your url
+    );
+
   _siteMessageHandler: (e) ->
     console.log 'message received on the site'
     console.log 'message: ' + e.data.message
@@ -81,3 +87,4 @@ $ ->
   App.current.domReady()
 
 window.App = App
+

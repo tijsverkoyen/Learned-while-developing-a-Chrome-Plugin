@@ -1,1 +1,1 @@
-coffee: sh -c 'coffee -w -c -o js ./coffee'
+coffee: sh -c 'cd postMessage && coffee -w -c -o js ./coffee'

@@ -32,4 +32,9 @@ class App extends DefaultObject
   @onDomReady [
   ]
 
+App.current = new App()
+
+$ ->
+  App.current.domReady()
+
 window.App = App

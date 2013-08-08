@@ -8,23 +8,30 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	<script src="js/app.js"></script>
 </head>
-<body>
+<body class="site">
 	<div class="container" style="margin-top: 50px;">
 		<div class="row-fluid">
-			<div class="span8 offset2 well">
+			<div class="well">
 				<header>
 					<h2>Below is an iframe</h2>
 				</header>
-				<iframe src="./iframe.html" width="100%" height="200px" border="none"></iframe>
+				<iframe id="iframe" src="./iframe.html" width="100%" height="200px" border="none"></iframe>
 			</div>
 		</div>
 		<div class="row-fluid">
-			<div class="span8 offset2 well">
+			<div class="span6 well">
 				<header>
 					<h2>This is the site itself</h2>
 				</header>
 				<p>
 					<a href="#" class="btn" id="pingTheIframe">Ping the iframe</a>
+				</p>
+			</div>
+			<div class="span6 well" style="min-height: 140px;">
+				<header>
+					<h2>Output</h2>
+				</header>
+				<p id="receivedMessages">
 				</p>
 			</div>
 		</div>

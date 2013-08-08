@@ -1,0 +1,1 @@
+coffee: sh -c 'coffee -w -c -o js ./coffee'
